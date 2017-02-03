@@ -2,7 +2,7 @@
  * main.c
  *
  *  Created on: 3/02/2017
- *      Author: novationdev
+ *      Author: Adrian Gin
  */
 
 
