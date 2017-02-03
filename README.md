@@ -1,5 +1,5 @@
 # OrangePi_BM
-A simple LED Blinker for the Orange Pi Zero H2+/H3
+A simple LED Blinker for the Orange Pi Zero H2+/H3 using uboot and bare metal programming.
 
 
 Update:
@@ -21,6 +21,28 @@ CPUS_CLK_BASE_ADDR (0x01f01400)
 CPUS_APB0_GATE     *(volatile unsigned int*)(CPUS_CLK_BASE_ADDR + 0x28)
 
 R_PIO Gate is bit0 which must be set before the R_PIO/PORTL registers can be touched.
+
+
+
+Loading:
+
+use uBoot to load this.
+
+arm-none-eabi-objcopy -O binary "OPiBareMetal.elf"  "OPiBareMetal.bin"
+
+copy this bin to an SD Card to say /boot
+
+
+in uboot:
+
+load mmc 0:1 0x40000000 /boot/OPiBareMetal.bin
+
+go 0x40000000
+
+
+
+
+
 
 
 
